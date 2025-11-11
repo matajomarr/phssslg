@@ -9,6 +9,15 @@
 </head>
 <body>
 
+<!-- Quote of the Day Popup -->
+<div id="quotePopup" class="quote-popup">
+    <div class="quote-content">
+        <h2>Quote of the Day</h2>
+        <p id="quoteText"></p>
+        <button onclick="closeQuote()">Continue</button>
+    </div>
+</div>
+
 <!-- Header -->
 <header>
     <div class="header-left">
@@ -22,13 +31,13 @@
 </header>
 
 <!-- SSLG Title Section -->
-<section class="ssl-title-section">
+<section class="ssl-title-section animate-fade">
     <h2>Supreme Secondary Learner Government</h2>
     <p>The Supreme Secondary Learners Government (SSLG) of Pacac High School is the highest student governing body, leading programs and initiatives while representing student voices and fostering leadership, responsibility, and collaboration.</p>
 </section>
 
 <!-- Announcements Section -->
-<main id="announcements" class="content-section">
+<main id="announcements" class="content-section animate-slide">
     <div class="announcements-container">
         <div class="announcement important">
             <div class="announcement-title">
@@ -54,91 +63,32 @@
 </main>
 
 <!-- Officers Section -->
-<main id="officers" class="content-section" style="display:none;">
+<main id="officers" class="content-section animate-slide" style="display:none;">
     <section class="ssl-title-section">
         <h2>SSLG OFFICERS</h2>
         <p>S.Y 2025-2026</p>
     </section>
 
     <div class="officers-container">
-        <!-- 12 Officers (Square) -->
-        <div class="officer">
-            <img src="Lordwin.png" alt="President" class="square-img">
-            <h3>Lordwin C. Biag</h3>
-            <p>President</p>
-        </div>
-        <div class="officer">
-            <img src="Louie.png" alt="Vice President" class="square-img">
-            <h3>John Louie C. Daet</h3>
-            <p>Vice President</p>
-        </div>
-        <div class="officer">
-            <img src="Jomar.png" alt="Secretary" class="square-img">
-            <h3>Jomar C. Mata</h3>
-            <p>Secretary</p>
-        </div>
-        <div class="officer">
-            <img src="vanna.png" alt="Treasurer" class="square-img">
-            <h3>Nhirvanna A. Dingle</h3>
-            <p>Treasurer</p>
-        </div>
-        <div class="officer">
-            <img src="Milred.png" alt="Auditor" class="square-img">
-            <h3>Meldred J. Biag</h3>
-            <p>Auditor</p>
-        </div>
-        <div class="officer">
-            <img src="jhas.png" alt="Public Officer" class="square-img">
-            <h3>Jhasline G. Sonza</h3>
-            <p>P.I.O</p>
-        </div>
-        <div class="officer">
-            <img src="Adrian.png" alt="Officer7" class="square-img">
-            <h3>Adrian B. Cabatbat</h3>
-            <p>P.O</p>
-        </div>
-        <div class="officer">
-            <img src="Richard.png" alt="Officer8" class="square-img">
-            <h3>Richard M. Ubaldo</h3>
-            <p>Grade 12 Representative</p>
-        </div>
-        <div class="officer">
-            <img src="Joward.png" alt="Officer9" class="square-img">
-            <h3>Joward M. Barrientos</h3>
-            <p>Grade 11 Representative</p>
-        </div>
-        <div class="officer">
-            <img src="Julia.png" alt="Officer10" class="square-img">
-            <h3>Julia R. Romero</h3>
-            <p>Grade 10 Representative</p>
-        </div>
-        <div class="officer">
-            <img src="Crisnel.png" alt="Officer11" class="square-img">
-            <h3>Crisnel L. Alpindo</h3>
-            <p>Grade 9 Representative</p>
-        </div>
-        <div class="officer">
-            <img src="yowhan.png" alt="Officer12" class="square-img">
-            <h3>Yohan P. Miranda</h3>
-            <p>Grade 8 Representative</p>
-        </div>
+        <!-- Officers -->
+        <div class="officer"><img src="Lordwin.png" class="square-img"><h3>Lordwin C. Biag</h3><p>President</p></div>
+        <div class="officer"><img src="Louie.png" class="square-img"><h3>John Louie C. Daet</h3><p>Vice President</p></div>
+        <div class="officer"><img src="Jomar.png" class="square-img"><h3>Jomar C. Mata</h3><p>Secretary</p></div>
+        <div class="officer"><img src="vanna.png" class="square-img"><h3>Nhirvanna A. Dingle</h3><p>Treasurer</p></div>
+        <div class="officer"><img src="Milred.png" class="square-img"><h3>Meldred J. Biag</h3><p>Auditor</p></div>
+        <div class="officer"><img src="jhas.png" class="square-img"><h3>Jhasline G. Sonza</h3><p>P.I.O</p></div>
+        <div class="officer"><img src="Adrian.png" class="square-img"><h3>Adrian B. Cabatbat</h3><p>P.O</p></div>
+        <div class="officer"><img src="Richard.png" class="square-img"><h3>Richard M. Ubaldo</h3><p>Grade 12 Representative</p></div>
+        <div class="officer"><img src="Joward.png" class="square-img"><h3>Joward M. Barrientos</h3><p>Grade 11 Representative</p></div>
+        <div class="officer"><img src="Julia.png" class="square-img"><h3>Julia R. Romero</h3><p>Grade 10 Representative</p></div>
+        <div class="officer"><img src="Crisnel.png" class="square-img"><h3>Crisnel L. Alpindo</h3><p>Grade 9 Representative</p></div>
+        <div class="officer"><img src="yowhan.png" class="square-img"><h3>Yohan P. Miranda</h3><p>Grade 8 Representative</p></div>
 
-        <!-- Adviser (Rectangular) -->
-        <div class="officer adviser">
-            <img src="Rayan.jpg" alt="Adviser" class="rect-img">
-            <h3>Rayan M. Castro</h3>
-            <p>Adviser</p>
-        </div>
+        <!-- Adviser -->
+        <div class="officer adviser"><img src="Rayan.jpg" class="rect-img"><h3>Rayan M. Castro</h3><p>Adviser</p></div>
     </div>
 </main>
 
-<script>
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content-section');
-    sections.forEach(sec => sec.style.display = 'none');
-    document.getElementById(sectionId).style.display = 'block';
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
