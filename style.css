@@ -1,0 +1,208 @@
+/* Import Poppins Bold for SSLG Title */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+body {
+    background-color: white;
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #8B0000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header-left h1 {
+    font-size: 1.2rem;
+}
+
+.header-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 7px 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(145deg, #f0f0f0, #d9d9d9);
+}
+
+/* Title */
+.ssl-title-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.ssl-title-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #ff4d4d, #b30000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.ssl-title-section p {
+    font-size: 1.1rem;
+    color: #8B0000;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Announcements */
+.announcements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+}
+
+.announcement {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.announcement.important {
+    max-width: 600px;
+}
+
+.announcement-title {
+    background: linear-gradient(90deg, #8B0000, #B22222);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.announcement-detail {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Officers */
+.officers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.officer {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.officer:hover {
+    transform: translateY(-5px);
+}
+
+/* Square Placeholder for Officers */
+.square-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Rectangular Placeholder for Adviser */
+.rect-img {
+    width: 100%;
+    aspect-ratio: 3 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Name placeholder */
+.officer h3 {
+    background-color: #B22222;
+    color: white;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Position below name */
+.officer p {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Adviser — bigger card */
+.officer.adviser {
+    width: 250px;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .officer { width: 140px; padding: 10px; }
+}

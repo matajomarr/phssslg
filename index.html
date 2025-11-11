@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pacac High School Student Council</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header-left">
+        <img src="sslg.png" alt="School Logo" class="logo">
+        <h1>Pacac High School - SSLG</h1>
+    </div>
+    <nav class="header-right">
+        <button class="nav-btn" onclick="showSection('announcements')">Home</button>
+        <button class="nav-btn" onclick="showSection('officers')">Officers</button>
+    </nav>
+</header>
+
+<!-- SSLG Title Section -->
+<section class="ssl-title-section">
+    <h2>Supreme Secondary Learner Government</h2>
+    <p>The Supreme Secondary Learners Government (SSLG) of Pacac High School is the highest student governing body, leading programs and initiatives while representing student voices and fostering leadership, responsibility, and collaboration.</p>
+</section>
+
+<!-- Announcements Section -->
+<main id="announcements" class="content-section">
+    <div class="announcements-container">
+        <div class="announcement important">
+            <div class="announcement-title">
+                <i class="fas fa-thumbtack"></i> PHS Fashion Runway
+            </div>
+            <div class="announcement-detail">
+                The Pacac High School Fashion Runway is set to take place on <b>November 21</b>, promising an evening of style, talent, and entertainment. Special guests will also grace the occasion. All proceeds will be donated to the school’s <b>Reading Center</b>.
+            </div>
+        </div>
+        <div class="announcement">
+            <div class="announcement-title">Student Council Elections</div>
+            <div class="announcement-detail">Nominations start next week. Submit your candidates on time.</div>
+        </div>
+        <div class="announcement">
+            <div class="announcement-title">Library Reading Day</div>
+            <div class="announcement-detail">Join us this Wednesday for a fun reading day. Don’t miss it!</div>
+        </div>
+        <div class="announcement">
+            <div class="announcement-title">Environmental Workshop</div>
+            <div class="announcement-detail">Attend our workshop on environmental awareness coming soon!</div>
+        </div>
+    </div>
+</main>
+
+<!-- Officers Section -->
+<main id="officers" class="content-section" style="display:none;">
+    <section class="ssl-title-section">
+        <h2>SSLG OFFICERS</h2>
+        <p>S.Y 2025-2026</p>
+    </section>
+
+    <div class="officers-container">
+        <!-- 12 Officers (Square) -->
+        <div class="officer">
+            <img src="Lordwin.png" alt="President" class="square-img">
+            <h3>Lordwin C. Biag</h3>
+            <p>President</p>
+        </div>
+        <div class="officer">
+            <img src="Louie.png" alt="Vice President" class="square-img">
+            <h3>John Louie C. Daet</h3>
+            <p>Vice President</p>
+        </div>
+        <div class="officer">
+            <img src="Jomar.png" alt="Secretary" class="square-img">
+            <h3>Jomar C. Mata</h3>
+            <p>Secretary</p>
+        </div>
+        <div class="officer">
+            <img src="vanna.png" alt="Treasurer" class="square-img">
+            <h3>Nhirvanna A. Dingle</h3>
+            <p>Treasurer</p>
+        </div>
+        <div class="officer">
+            <img src="Milred.png" alt="Auditor" class="square-img">
+            <h3>Meldred J. Biag</h3>
+            <p>Auditor</p>
+        </div>
+        <div class="officer">
+            <img src="jhas.png" alt="Public Officer" class="square-img">
+            <h3>Jhasline G. Sonza</h3>
+            <p>P.I.O</p>
+        </div>
+        <div class="officer">
+            <img src="Adrian.png" alt="Officer7" class="square-img">
+            <h3>Adrian B. Cabatbat</h3>
+            <p>P.O</p>
+        </div>
+        <div class="officer">
+            <img src="Richard.png" alt="Officer8" class="square-img">
+            <h3>Richard M. Ubaldo</h3>
+            <p>Grade 12 Representative</p>
+        </div>
+        <div class="officer">
+            <img src="Joward.png" alt="Officer9" class="square-img">
+            <h3>Joward M. Barrientos</h3>
+            <p>Grade 11 Representative</p>
+        </div>
+        <div class="officer">
+            <img src="Julia.png" alt="Officer10" class="square-img">
+            <h3>Julia R. Romero</h3>
+            <p>Grade 10 Representative</p>
+        </div>
+        <div class="officer">
+            <img src="Crisnel.png" alt="Officer11" class="square-img">
+            <h3>Crisnel L. Alpindo</h3>
+            <p>Grade 9 Representative</p>
+        </div>
+        <div class="officer">
+            <img src="yowhan.png" alt="Officer12" class="square-img">
+            <h3>Yohan P. Miranda</h3>
+            <p>Grade 8 Representative</p>
+        </div>
+
+        <!-- Adviser (Rectangular) -->
+        <div class="officer adviser">
+            <img src="Rayan.jpg" alt="Adviser" class="rect-img">
+            <h3>Rayan M. Castro</h3>
+            <p>Adviser</p>
+        </div>
+    </div>
+</main>
+
+<script>
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(sectionId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
