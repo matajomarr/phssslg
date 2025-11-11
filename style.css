@@ -3,98 +3,76 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
 body {
-  background-color: #fafafa;
-  background-image: radial-gradient(rgba(139, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 25px 25px;
+  background-color: white;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Header */
+/* === Quote Popup === */
+.quote-popup {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 2000;
+  animation: fadeIn 1s ease-in;
+}
+
+.quote-box {
+  background: white;
+  color: #8B0000;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 350px;
+  text-align: center;
+  animation: popUp 1s ease-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.quote-box h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.quote-box p {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* === Header === */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #8B0000, #B22222);
+  background-color: #8B0000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  animation: fadeInDown 1s ease;
+  animation: slideDown 1s ease;
 }
 
-.logo { width: 45px; height: 45px; }
+/* === Animations === */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes popUp { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-.header-left { display: flex; align-items: center; gap: 10px; }
-.header-left h1 { font-size: 1.1rem; }
+.fade-in { animation: fadeIn 1s ease; }
+.fade-up { animation: slideUp 1s ease; }
+.slide-up { animation: slideUp 1s ease; }
+.zoom-in { animation: zoomIn 1s ease; }
 
-.nav-btn {
-  background: linear-gradient(145deg, #ffffff, #cfcfcf);
-  border: none;
-  color: #222;
-  padding: 8px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-}
-.nav-btn:hover {
-  transform: scale(1.1);
-  background: linear-gradient(145deg, #f8f8f8, #d0d0d0);
-}
-
-/* Title */
-.ssl-title-section {
-  text-align: center;
-  padding: 25px 15px;
-  animation: fadeIn 2s ease;
-}
-.ssl-title-section h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-  background: linear-gradient(90deg, #ff4d4d, #b30000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.ssl-title-section p {
-  color: #8B0000;
-  max-width: 700px;
-  margin: 10px auto;
-  line-height: 1.5;
-}
-
-/* Announcement Cards */
-.announcements-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  padding-bottom: 20px;
-}
-.announcement {
-  width: 90%;
-  max-width: 520px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  animation: popIn 1s ease;
-}
-.announcement-title {
-  background: linear-gradient(90deg, #8B0000, #B22222);
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
-}
-.announcement-detail {
-  background: white;
-  padding: 12px;
-  text-align: center;
-}
-
-/* Officers */
+/* === Rest of your styles remain same === */
 .officers-container {
   display: flex;
   flex-wrap: wrap;
@@ -102,85 +80,54 @@ header {
   gap: 25px;
   padding: 20px;
 }
+
 .officer {
-  background: #fff;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   border-radius: 15px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
   width: 180px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeUp 1s ease;
+  transition: transform 0.3s;
 }
-.officer:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.3);
-}
-.square-img, .rect-img {
+
+.officer:hover { transform: scale(1.05); }
+
+.square-img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
-  object-fit: cover;
 }
-.square-img { aspect-ratio: 1 / 1; }
-.rect-img { aspect-ratio: 16 / 9; }
+
+.rect-img {
+  width: 100%;
+  aspect-ratio: 3/3;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 .officer h3 {
   background-color: #B22222;
   color: white;
-  padding: 5px;
-  border-radius: 5px;
+  width: 100%;
   height: 40px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.officer p { font-size: 0.85rem; color: #333; }
-
-/* Adviser */
-.officer.adviser { width: 240px; }
-
-/* Popup Quote */
-.quote-popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.8s ease;
-  z-index: 9999;
-}
-.quote-content {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  width: 90%;
-  max-width: 350px;
-  text-align: center;
-  animation: popIn 1s ease;
-}
-.quote-content h2 { color: #8B0000; margin-bottom: 10px; }
-.quote-content p { margin-bottom: 15px; font-style: italic; }
-.quote-content button {
-  background: linear-gradient(90deg, #8B0000, #B22222);
-  border: none;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
-/* Animations */
-@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-@keyframes fadeUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
-@keyframes fadeInDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
-@keyframes popIn { 0% {transform: scale(0.8); opacity: 0;} 100% {transform: scale(1); opacity: 1;} }
+.officer p { font-size: 0.85rem; color: #333; text-align: center; }
 
-/* Responsive */
-@media (max-width: 480px) {
-  header h1 { font-size: 0.9rem; }
+.officer.adviser { width: 250px; }
+
+@media screen and (max-width: 480px) {
   .officer { width: 140px; padding: 10px; }
-  .ssl-title-section h2 { font-size: 1.5rem; }
 }
